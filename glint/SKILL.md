@@ -194,7 +194,7 @@ After export:
 
 ## References
 
-- [ ] `references/capture.md` - Capture CLI, device presets, glint.yaml schema
-- [ ] `references/bridge.md` - Bridge commands, WebSocket, crawl modes
-- [ ] `references/web.md` - Templates, export sizes, .glint format
-- [ ] `references/session-schema.md` - session.json field definitions
+- [Capture](references/capture.md) - CLI, device presets, `glint.yaml`
+- [Bridge](references/bridge.md) - commands, WebSocket, crawl modes
+- [Web](references/web.md) - templates, export sizes, `.glint` format
+- [Session schema](references/session-schema.md) - `session.json` fields
