@@ -8,11 +8,18 @@ Agent skill for [Glint](https://github.com/Glint-Org) - create Play Store and Ap
 
 ```bash
 npx skills add Glint-Org/skills
-# or just the glint skill:
-npx skills add Glint-Org/skills --skill glint
 ```
 
-Then ask your agent something like: *create store screenshots for this app*.
+## How to use it
+
+1. Run the install command in your app repo (or globally, if your agent supports that).
+2. Open the project in **Cursor**, **Claude Code**, or another skills-aware agent.
+3. Ask in plain language, for example:
+   - *Create store screenshots for this app*
+   - *Capture Play Store screens with Glint*
+4. The agent loads the `glint` skill and follows Capture → Web → export (or Bridge / MCP when that fits).
+
+You still need Glint tools available for the path you use (Capture CLI, Bridge + device, or Web). See the [docs](https://glint-org.github.io/Glint-Docs/).
 
 ## Layout
 
@@ -21,15 +28,6 @@ glint/
   SKILL.md           # when / how to run Capture, Bridge, Web, MCP
   references/        # deeper CLI and schema notes (loaded on demand)
 ```
-
-Keep the skill in its own folder (`glint/`). Do not flatten `SKILL.md` to the repo root unless this repo becomes a single-skill-only package renamed to match the skill.
-
-## What it teaches the agent
-
-1. Pick Capture (Flutter) or Bridge (Android device)
-2. Capture real screens → `session.json` + PNGs
-3. Import / export via Glint Web (or MCP / headless)
-4. Iterate without inventing fake store art
 
 ## Related repos
 
