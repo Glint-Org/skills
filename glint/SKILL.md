@@ -11,9 +11,9 @@ description: >-
 Glint captures real app UI at exact store dimensions and turns them into
 upload-ready screenshots. Two capture paths, one output format:
 
-- **Path A — Flutter (Glint-Capture):** renders widgets in test isolation.
+- **Path A - Flutter (Glint-Capture):** renders widgets in test isolation.
   No device needed. Fast, CI-friendly. Best for Flutter apps.
-- **Path B — Android device (Glint-Bridge):** captures real pixels from a
+- **Path B - Android device (Glint-Bridge):** captures real pixels from a
   connected phone via ADB. Works for any Android app (native, React Native,
   Flutter, Kotlin).
 
@@ -28,9 +28,9 @@ ls output/session.json 2>/dev/null
 ls goldie/goldie.config.ts .argent/flows/ 2>/dev/null
 ```
 
-If `glint.yaml` exists, this is a follow-up — read it and the test file
+If `glint.yaml` exists, this is a follow-up - read it and the test file
 before doing anything. If `output/session.json` exists, screenshots are
-already captured — skip to Web import.
+already captured - skip to Web import.
 
 ## Step 0: Decide capture path
 
@@ -45,7 +45,7 @@ Check what the repo contains:
 
 ## Step 1: Gather facts
 
-### Path A — Flutter (Glint-Capture)
+### Path A - Flutter (Glint-Capture)
 
 ```bash
 # Check if glint CLI is available
@@ -58,7 +58,7 @@ If not installed, activate it:
 dart pub global activate --source git https://github.com/Glint-Org/Glint-Capture.git
 ```
 
-### Path B — Android device (Glint-Bridge)
+### Path B - Android device (Glint-Bridge)
 
 ```bash
 cd Glint-Bridge
@@ -71,7 +71,7 @@ If no ADB: tell them to install platform-tools.
 
 ## Step 2: Capture
 
-### Path A — Flutter
+### Path A - Flutter
 
 From the Flutter app root:
 
@@ -85,12 +85,12 @@ Or one command: `glint capture --auto` (discovers + captures).
 
 The agent should:
 
-1. Review discovered screens — reject login, debug, empty, loading screens
+1. Review discovered screens - reject login, debug, empty, loading screens
 2. Edit `test/glint_screenshots_test.dart` if needed
 3. Run `glint capture`
 4. Verify output: `ls glint_screenshots/android/pixel9/` should have PNGs
 
-### Path B — Android device
+### Path B - Android device
 
 From Glint-Bridge:
 
@@ -135,7 +135,7 @@ Store values: `play/phone`, `ios/iphone`, `ios/ipad`, `play/tablet-7`, etc.
 
 ## Step 4: Import into Glint-Web and export
 
-### Option A — Browser editor (interactive)
+### Option A - Browser editor (interactive)
 
 1. Start Glint-Web: `cd Glint-Web && npm install && npm run dev`
 2. Open http://localhost:5173
@@ -144,7 +144,7 @@ Store values: `play/phone`, `ios/iphone`, `ios/ipad`, `play/tablet-7`, etc.
 5. Set headlines, backgrounds, device frames in the editor
 6. Export → PNG ZIP
 
-### Option B — Headless export (CI / agent)
+### Option B - Headless export (CI / agent)
 
 ```bash
 cd Glint-Web
@@ -157,7 +157,7 @@ node scripts/headless-export.mjs \
   --out ../Glint-ss.zip
 ```
 
-### Option C — Via MCP tools
+### Option C - Via MCP tools
 
 If the MCP server is running:
 
@@ -185,16 +185,16 @@ After export:
 
 ## Gotchas
 
-- **Debug builds paint LogBox banners** — always use Release builds for Bridge
-- **Ahem font** — if text shows as boxes, ensure `flutter_test_config.dart` loads Roboto (Glint-Capture ships it)
-- **session.json missing screens** — means no PNGs were captured; check the test file has real builders
-- **Wrong store size in export** — check the `store` field in session.json matches the template
-- **Bridge: no device** — `adb devices` must show a connected device
-- **Bridge: crawl needs Appium** — `pip install Appium-Python-Client` + running Appium server
+- **Debug builds paint LogBox banners** - always use Release builds for Bridge
+- **Ahem font** - if text shows as boxes, ensure `flutter_test_config.dart` loads Roboto (Glint-Capture ships it)
+- **session.json missing screens** - means no PNGs were captured; check the test file has real builders
+- **Wrong store size in export** - check the `store` field in session.json matches the template
+- **Bridge: no device** - `adb devices` must show a connected device
+- **Bridge: crawl needs Appium** - `pip install Appium-Python-Client` + running Appium server
 
 ## References
 
-- [ ] `references/capture.md` — Capture CLI, device presets, glint.yaml schema
-- [ ] `references/bridge.md` — Bridge commands, WebSocket, crawl modes
-- [ ] `references/web.md` — Templates, export sizes, .glint format
-- [ ] `references/session-schema.md` — session.json field definitions
+- [ ] `references/capture.md` - Capture CLI, device presets, glint.yaml schema
+- [ ] `references/bridge.md` - Bridge commands, WebSocket, crawl modes
+- [ ] `references/web.md` - Templates, export sizes, .glint format
+- [ ] `references/session-schema.md` - session.json field definitions

@@ -45,8 +45,8 @@ devices:
 | Store | Dimensions | Device |
 |-------|-----------|--------|
 | Play Phone | 1080×1920 | pixel9 |
-| Play Tablet 7" | 1200×1920 | — |
-| Play Tablet 10" | 1600×2560 | — |
+| Play Tablet 7" | 1200×1920 | - |
+| Play Tablet 10" | 1600×2560 | - |
 | iOS iPhone | 1290×2796 | iphone16ProMax |
 | iOS iPad | 2048×2732 | ipadPro129 |
 

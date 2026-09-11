@@ -3,12 +3,12 @@
 ## Templates
 
 ### Enabled by Default
-- `glint-gold-play` — Flagship, Play Store phone
-- `glint-gold-ios` — Flagship, App Store iPhone
-- `glint-gold-ipad` — Flagship, App Store iPad
-- `blink-play` — Clean, Play Store phone
-- `blink-ios` — Clean, App Store iPhone
-- `blink-tablet` — Clean, tablet
+- `glint-gold-play` - Flagship, Play Store phone
+- `glint-gold-ios` - Flagship, App Store iPhone
+- `glint-gold-ipad` - Flagship, App Store iPad
+- `blink-play` - Clean, Play Store phone
+- `blink-ios` - Clean, App Store iPhone
+- `blink-tablet` - Clean, tablet
 
 ### Template Family System
 Templates use `common.json` + platform variants (`play.json`, `ios.json`, `tablet.json`) merged at load time.
